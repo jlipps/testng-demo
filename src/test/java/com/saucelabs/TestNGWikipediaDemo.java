@@ -134,6 +134,16 @@ public class TestNGWikipediaDemo {
     }
 
     @Test
+    public void goToHistorySectionBis() throws Exception {
+        goToHistorySection();
+    }
+
+    @Test
+    public void goToHistorySectionTer() throws Exception {
+        goToHistorySection();
+    }
+
+    @Test
     public void verifyEditPageUI() throws Exception {
         Ctx ctx = (Ctx) threadLocal.get();
         WebDriver driver = ctx.driver;
@@ -181,4 +191,14 @@ public class TestNGWikipediaDemo {
         }
     }
 
-}
+    @Test
+    public void longTestBis() throws Exception {
+        longTest();
+    }
+
+    @Test
+    public void longTestTer() throws Exception {
+        longTest();
+    }
+
+ }

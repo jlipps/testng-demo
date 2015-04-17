@@ -141,10 +141,35 @@ public class TestNGWikipediaDemoTer {
     }
 
     @Test
+    public void goToHistorySectionBis() throws Exception {
+        goToHistorySection();
+    }
+
+    @Test
     public void goToHistorySectionTer() throws Exception {
         goToHistorySection();
     }
 
+    @Test
+    public void verifyEditPageUI() throws Exception {
+        Ctx ctx = (Ctx) threadLocal.get();
+        WebDriver driver = ctx.driver;
+        try {
+            driver.get("http://en.wikipedia.org/wiki/Ultimate_Fighting_Championship");
+
+            // click edit page
+            driver.findElement(By.cssSelector("#ca-edit a")).click();
+
+            // verify edit page UI
+            Assert.assertEquals("http://en.wikipedia.org/w/index.php?title=Ultimate_Fighting_Championship&action=edit", driver.getCurrentUrl());
+            Assert.assertTrue(driver.findElement(By.cssSelector(".wikiEditor-ui")).isDisplayed());
+        } catch (Exception e) {
+            ctx.passed = false;
+            throw e;
+        }
+    }
+
+    @Test
     private void longTest() throws Exception {
         Ctx ctx = (Ctx) threadLocal.get();
         WebDriver driver = ctx.driver;
@@ -171,6 +196,11 @@ public class TestNGWikipediaDemoTer {
             ctx.passed = false;
             throw e;
         }
+    }
+
+    @Test
+    public void longTestBis() throws Exception {
+        longTest();
     }
 
     @Test
