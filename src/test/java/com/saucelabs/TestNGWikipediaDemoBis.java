@@ -72,6 +72,7 @@ public class TestNGWikipediaDemoBis {
     }
 
 
+    @Test
     public void verifyLaunch() throws Exception {
         Ctx ctx = (Ctx) threadLocal.get();
         WebDriver driver = ctx.driver;
@@ -97,6 +98,12 @@ public class TestNGWikipediaDemoBis {
         verifyLaunch();
     }
 
+    @Test
+    public void verifyLaunchTer() throws Exception {
+        verifyLaunch();
+    }
+
+    @Test
     public void verifySearchForUFC() throws Exception {
         Ctx ctx = (Ctx) threadLocal.get();
         WebDriver driver = ctx.driver;
@@ -121,6 +128,12 @@ public class TestNGWikipediaDemoBis {
         verifySearchForUFC();
     }
 
+    @Test
+    public void verifySearchForUFCTer() throws Exception {
+        verifySearchForUFC();
+    }
+
+    @Test
     public void goToHistorySection() throws Exception {
         Ctx ctx = (Ctx) threadLocal.get();
         WebDriver driver = ctx.driver;
